@@ -1,0 +1,13 @@
+<a href="/" data-method="GET">Back</a>
+
+<% @json_response['courses'].each do |course| %>
+    <%if (!course['image'].blank?)%>
+        <%if (course['title'].include? 'Analytics' || 'analytics')%>
+            <md-card>
+              <h2><%=  course['title'] %></h2>
+              <img src=<%= course['image']%> alt="photo" width="400px">
+              <p><%=  course['summary'] %></p>
+            </md-card>
+        <%end%>
+    <%end%>
+<% end %>

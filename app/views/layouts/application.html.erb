@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CourseraRails</title>
+  <title>Coursera_R</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div flex id="navbar">
+    <div flex="40" style="display: flex; width: 100%; justify-content: flex-start;align-items: center;">
+      <a href="/">Coursera</a>
+      <div class="dropdown" style="float:left;">
+        <button class="dropbtn">Categories</button>
+        <div class="dropdown-content" style="left:0;">
+          <a href="/android">Android</a>
+          <a href="/web">Web</a>
+          <a href="/analytics">Analytics</a>
+          <a href="#">API</a>
+          <a href="#">Technical Interview</a>
+        </div>
+      </div>
+    </div>
+    <span flex></span>
+    <div flex="60" style="display: flex; justify-content: flex-end;align-items: center;width: 100%;">
+      <a href="#">For Teachers</a>
+      <a href="#">Log In</a>
+      <a href="#">Sign Up</a>
+    </div>
+  </div>
 
 <%= yield %>
 
+<footer>
+  <div>
+    <h4>Made by Raounak Sharma</h4>
+  </div>
+</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 </body>
 </html>
