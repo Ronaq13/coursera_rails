@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+function subSignInFunc(){
+    console.log("Hello");
+    alert("Please Sign in first!!");
+}

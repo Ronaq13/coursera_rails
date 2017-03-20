@@ -1,14 +1,15 @@
-<a href="/" data-method="GET">Back</a>
+<h1>Take the world's best courses online.</h1>
+
+<br>
+<br>
 
 <% Course.all.each do |course| %>
-    <% if course.category === "Android" %>
         <md-card>
           <p><%= course.key%></p>
           <%url = "/course_view_home/" + course.key %>
           <h2><a href=<%= url%> ><%=  course.title %></a></h2>
-
+          <br>
           <img src=<%= course.image%> alt="photo" width="400px">
-          <p><%=  course.summary %></p>
+          <p><%=  course.short_summay %></p>
         </md-card>
-    <%end%>
 <% end %>

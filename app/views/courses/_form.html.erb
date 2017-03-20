@@ -1,0 +1,77 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :key %><br>
+    <%= f.text_field :key %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :homepage %><br>
+    <%= f.text_field :homepage %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle %><br>
+    <%= f.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br>
+    <%= f.text_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :banner_image %><br>
+    <%= f.text_field :banner_image %>
+  </div>
+  <div class="field">
+    <%= f.label :teaser_video %><br>
+    <%= f.text_field :teaser_video %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br>
+    <%= f.text_field :summary %>
+  </div>
+  <div class="field">
+    <%= f.label :short_summay %><br>
+    <%= f.text_field :short_summay %>
+  </div>
+  <div class="field">
+    <%= f.label :required_knowledge %><br>
+    <%= f.text_field :required_knowledge %>
+  </div>
+  <div class="field">
+    <%= f.label :syllabus %><br>
+    <%= f.text_field :syllabus %>
+  </div>
+  <div class="field">
+    <%= f.label :faq %><br>
+    <%= f.text_field :faq %>
+  </div>
+  <div class="field">
+    <%= f.label :expected_duration %><br>
+    <%= f.number_field :expected_duration %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

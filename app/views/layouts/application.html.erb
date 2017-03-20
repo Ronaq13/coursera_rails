@@ -24,10 +24,32 @@
     </div>
     <span flex></span>
     <div flex="60" style="display: flex; justify-content: flex-end;align-items: center;width: 100%;">
-      <a href="#">For Teachers</a>
-      <a href="#">Log In</a>
-      <a href="#">Sign Up</a>
+
+      <%if teacher_signed_in? %>
+          <a href="/teachers/sign_out" data-method="DELETE">Log Out</a>
+          <a href="">Profile</a>
+      <%end%>
+
+      <% if user_signed_in? %>
+          <div class="dropdown" style="float:right;">
+            <button class="dropbtn"><%= current_user.email%></button>
+            <div class="dropdown-content" style="left:0;">
+              <a href="/myCourses">My Courses</a>
+              <a href="/profile">Profile</a>
+              <a href="/settings">Settings</a>
+              <a href="/users/sign_out" data-method="DELETE">Log Out</a>
+            </div>
+          </div>
+      <%end%>
+
+
+      <%if !user_signed_in? && !teacher_signed_in?%>
+          <a href="/teachers/sign_in">For Teachers</a>
+          <a href="/users/sign_in">Log In</a>
+          <a href="/users/sign_up">Sign Up</a>
+      <%end%>
     </div>
+
   </div>
 
 <%= yield %>

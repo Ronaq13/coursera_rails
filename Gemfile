@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+#----------Gems I added ----------------------#
+
+gem 'devise'
+gem 'omniauth-facebook'

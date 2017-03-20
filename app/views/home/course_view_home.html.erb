@@ -1,2 +1,44 @@
-<h3>Hello ,put content here</h3>
-<h1><%= params[:key] %></h1>
+<% currentKey = params[:key] %>
+
+<% Course.all.each do |course| %>
+    <%if (course.key == currentKey)%>
+
+        <md-card>
+          <% imgSrc = course.banner_image.blank? ? course.image : course.banner_image %>
+
+          <h2><%=  course.title %></h2>
+          <h3><%= course.subtitle%></h3>
+          <img src=<%= imgSrc %> alt="photo" width="100%">
+          <p><%=  course.summary %></p>
+
+          <p> Level : <%=  course.level %></p>
+          <p><strong>Syllabus</strong></p>
+          <p><%=  course.syllabus %></p>
+          <p> Duration : <%=  course.expected_duration %> months</p>
+
+
+
+
+
+          <%#------------------ Code fo subscribe button ----------------------%>
+          <%if user_signed_in?%>
+              <% subscribeThisCourseURL = "/subscribeThisCourse/" + current_user.id.to_s + "/" + course.id.to_s + "/" + course.key %>
+              <% isAlreadySubscribe = false %>
+              <%Subscribe.all.each do |sub|%>
+                  <%if sub.course_id == course.id  %>
+                  <% isAlreadySubscribe = true %>
+                      <%end%>
+              <%end%>
+              <%if isAlreadySubscribe %>
+                <h3>Already Subscribed</h3>
+              <%else%>
+                <a href=<%= subscribeThisCourseURL %>  data-method="POST">Subscribe</a>
+              <%end%>
+            <%else%>
+              <button onclick="subSignInFunc()"> Subscribe</button>
+          <%end%>
+          <%#------------------ Code for subscribe ends------------------------ %>
+
+        </md-card>
+    <%end%>
+<% end %>

@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @course.category %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @course.key %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Homepage:</strong>
+  <%= @course.homepage %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @course.subtitle %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @course.level %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @course.image %>
+</p>
+
+<p>
+  <strong>Banner image:</strong>
+  <%= @course.banner_image %>
+</p>
+
+<p>
+  <strong>Teaser video:</strong>
+  <%= @course.teaser_video %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @course.summary %>
+</p>
+
+<p>
+  <strong>Short summay:</strong>
+  <%= @course.short_summay %>
+</p>
+
+<p>
+  <strong>Required knowledge:</strong>
+  <%= @course.required_knowledge %>
+</p>
+
+<p>
+  <strong>Syllabus:</strong>
+  <%= @course.syllabus %>
+</p>
+
+<p>
+  <strong>Faq:</strong>
+  <%= @course.faq %>
+</p>
+
+<p>
+  <strong>Expected duration:</strong>
+  <%= @course.expected_duration %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

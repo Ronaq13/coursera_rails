@@ -1,0 +1,33 @@
+<%= current_user.id %>
+
+
+  <md-card>
+    <p> <strong>Subscribed Courses</strong> </p>
+
+
+  <% coursesIdArray = Array.new %>
+
+  <% current_user.subscribes.each do |cour| %>
+      <% if current_user.id == cour.user_id  %>
+          <%
+            coursesIdArray << cour.course_id
+          %>
+
+      <% end %>
+  <%end%>
+
+  <md-card>
+    <%coursesIdArray.each do |element|%>
+      <%
+        tmpCourse = Course.find(element)
+      %>
+
+      <img src=<%= tmpCourse.image%> alt="photo" width="200px">
+        <p>Add a completion bar here</p>
+
+    <%end%>
+  </md-card>
+
+
+  </md-card>
+

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Key</th>
+      <th>Title</th>
+      <th>Homepage</th>
+      <th>Subtitle</th>
+      <th>Level</th>
+      <th>Image</th>
+      <th>Banner image</th>
+      <th>Teaser video</th>
+      <th>Summary</th>
+      <th>Short summay</th>
+      <th>Required knowledge</th>
+      <th>Syllabus</th>
+      <th>Faq</th>
+      <th>Expected duration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.category %></td>
+        <td><%= course.key %></td>
+        <td><%= course.title %></td>
+        <td><%= course.homepage %></td>
+        <td><%= course.subtitle %></td>
+        <td><%= course.level %></td>
+        <td><%= course.image %></td>
+        <td><%= course.banner_image %></td>
+        <td><%= course.teaser_video %></td>
+        <td><%= course.summary %></td>
+        <td><%= course.short_summay %></td>
+        <td><%= course.required_knowledge %></td>
+        <td><%= course.syllabus %></td>
+        <td><%= course.faq %></td>
+        <td><%= course.expected_duration %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>
