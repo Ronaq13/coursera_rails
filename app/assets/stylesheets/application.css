@@ -53,24 +53,10 @@ footer{
     background-color: lightgray;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*-----------For drop down-----------*/
 
  .dropbtn {
-     background-color: #4CAF50;
+     background-color: #3BAFDA;
      color: white;
      padding: 16px;
      font-size: 16px;
@@ -107,6 +93,6 @@ footer{
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #377EE6;
 }
 /*---------drop down end------------*/

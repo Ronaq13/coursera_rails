@@ -27,7 +27,7 @@ class HomeController < ApplicationController
     newSubscribe.user_id = user_id
     newSubscribe.course_id = course_id
     newSubscribe.save
-    return redirect_to '/course_view_home/' + params[:key]
+    return redirect_to '/myCourses'
   end
 
 

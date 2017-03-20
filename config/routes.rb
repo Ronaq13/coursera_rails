@@ -21,5 +21,10 @@ Rails.application.routes.draw do
   get '/profile' => 'student#profile'
   get '/settings' => 'student#settings'
 
+  get '/doingCourse/:course_id' => 'student#doingCourse'
+
+  post '/changeSettings' => 'student#changeSettings'
+
+
 
 end

@@ -1,0 +1,22 @@
+<md-card>
+  <%= form_tag '/changeSettings' do%>
+    <h3>Email ID : <%= text_field_tag 'email_id', current_user.email %> </h3>
+    <h3>User Name : <%= text_field_tag 'user_name', current_user.username %> </h3>
+    <h3>Short Bio : <%= text_field_tag 'short_bio', current_user.short_bio %></h3>
+    <h3>Age : <%= number_field_tag 'age', current_user.age %> years</h3>
+    <!--<h3>Gender : <%# text_field_tag 'gender', nil, placeholder: current_user.gender %></h3>-->
+      <div style="display: flex; align-items: center;">
+      <h3>Gender : </h3>
+      <select id="gender" name="gender">
+        <option><%= current_user.gender%></option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="others">Others</option>
+      </select>
+      </div>
+      <%= submit_tag "Save" %>
+  <%end%>
+
+  <a href=""></a>
+
+</md-card>

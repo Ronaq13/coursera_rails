@@ -1,0 +1,14 @@
+<md-card>
+
+      <h3>Email ID : <%= current_user.email %> </h3>
+      <h3>User Name : <%= current_user.username %> </h3>
+      <h3>Short Bio : <%= current_user.short_bio %></h3>
+      <h3>Age : <%= current_user.age %> years</h3>
+      <h3>Gender : <%= current_user.gender%></h3>
+  <div style="display: flex; margin-top: 50px;">
+    <a href="/settings">Change</a>&nbsp;&nbsp;
+    <a href="/">See courses</a>
+  </div>
+
+
+</md-card>

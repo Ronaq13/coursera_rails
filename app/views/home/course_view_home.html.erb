@@ -32,7 +32,9 @@
               <%if isAlreadySubscribe %>
                 <h3>Already Subscribed</h3>
               <%else%>
+
                 <a href=<%= subscribeThisCourseURL %>  data-method="POST">Subscribe</a>
+
               <%end%>
             <%else%>
               <button onclick="subSignInFunc()"> Subscribe</button>

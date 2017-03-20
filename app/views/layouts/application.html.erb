@@ -3,6 +3,7 @@
 <head>
   <title>Coursera_R</title>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -32,7 +33,15 @@
 
       <% if user_signed_in? %>
           <div class="dropdown" style="float:right;">
-            <button class="dropbtn"><%= current_user.email%></button>
+            <%
+                if(current_user.username.blank?)
+                  value = current_user.email
+                else
+                  value = current_user.username
+                end
+
+            %>
+            <button class="dropbtn"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<%= value%></button>
             <div class="dropdown-content" style="left:0;">
               <a href="/myCourses">My Courses</a>
               <a href="/profile">Profile</a>
