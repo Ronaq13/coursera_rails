@@ -21,3 +21,8 @@ function subSignInFunc(){
     alert("Please Sign in first!!");
 }
 
+function changeVideo(link){
+    alert("hello");
+    var frame = document.getElementById('videoFrame');
+    frame.src.innerHTML = link;
+}

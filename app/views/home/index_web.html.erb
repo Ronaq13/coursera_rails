@@ -4,6 +4,7 @@
     <% if course.category === "Web" %>
       <md-card>
         <p><%= course.key%></p>
+        <p><%= course.id%></p>
         <%url = "/course_view_home/" + course.key %>
         <h2><a href=<%= url%> ><%=  course.title %></a></h2>
 

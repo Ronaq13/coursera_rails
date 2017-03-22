@@ -21,11 +21,11 @@
          <md-card>
            <%
              tmpCourse = Course.find(element)
-             doingCourseURL = '/doingCourse/' + tmpCourse.id.to_s;
+             doingCourseURL = "'" + '/doingCourse/' + tmpCourse.id.to_s + "'"
 
            %>
 
-           <div style="display: flex; align-items: center;" onclick="location.href = <%= doingCourseURL %>;">
+           <div style="display: flex; align-items: center;" onclick="location.href=<%=doingCourseURL%>;">
 
              <img class="controllingWidthOfImage" src=<%= tmpCourse.image%> alt="photo">
              <p style="margin-left: 20px;"><%= tmpCourse.short_summay%></p>
