@@ -5,7 +5,7 @@
       <md-card>
         <p><%= course.key%></p>
         <p><%= course.id%></p>
-        <%url = "/course_view_home/" + course.key %>
+        <%url = "/course_view_home/" + course.id.to_s %>
         <h2><a href=<%= url%> ><%=  course.title %></a></h2>
 
         <img src=<%= course.image%> alt="photo" width="400px">

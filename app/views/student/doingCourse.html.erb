@@ -10,15 +10,15 @@
 <div style="display: flex;">
   <md-card>
     <%course.videos.each do |c|%>
-        <div class="desdiv" style="padding: 16px;"><%= c.desc %> </div>
+        <div class="desdiv" style="padding: 16px;"><p><%= c.desc %></p></div>
     <%end%>
   </md-card>
 
   <md-card>
     <iframe id="videoFrame" src=<%= finalMp4 %> width="420"  height=300">
-
     </iframe>
 
+    <div id="player"></div>
     <!--<%course.videos.each do |c|%>-->
         <!--<iframe src=<%= c.link %> width="420"  height=300">-->
         <!--</iframe>-->
@@ -28,19 +28,4 @@
 
 </div>
 
-<script>
-  window.addEventListener('load',fun);
 
-  var fun = function() {
-      console.log("Now do");
-      var changeFrame = function (e){
-          console.log(e.target);
-      }
-      var divs = document.getElementsByClassName('desdiv');
-      console.log(divs)
-      for (var i = 0; i < divs.length; i++) {
-          divs[i].addEventListener('click', changeFrame);
-      }
-  };
-
-</script>

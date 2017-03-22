@@ -27,7 +27,6 @@ class StudentController < ApplicationController
   end
 
   def doingCourse
-
   end
 
 

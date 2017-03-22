@@ -1,7 +1,5 @@
-<% currentKey = params[:key] %>
 
-<% Course.all.each do |course| %>
-    <%if (course.key == currentKey)%>
+<% course = Course.find_by(id: params[:id])%>
 
         <md-card>
           <% imgSrc = course.banner_image.blank? ? course.image : course.banner_image %>
@@ -22,25 +20,26 @@
 
           <%#------------------ Code fo subscribe button ----------------------%>
           <%if user_signed_in?%>
+              <% is_Already_subscribed = false %>
               <% subscribeThisCourseURL = "/subscribeThisCourse/" + current_user.id.to_s + "/" + course.id.to_s + "/" + course.key %>
-              <% isAlreadySubscribe = false %>
-              <%Subscribe.all.each do |sub|%>
-                  <%if sub.course_id == course.id  %>
-                  <% isAlreadySubscribe = true %>
-                      <%end%>
-              <%end%>
-              <%if isAlreadySubscribe %>
-                <h3>Already Subscribed</h3>
-              <%else%>
+              <% current_user.courses.each do |cou|%>
 
-                <a href=<%= subscribeThisCourseURL %>  data-method="POST">Subscribe</a>
-
+                   <% if cou.id == params[:id] %>
+                          <%= is_Already_subscribed = true %>
+                      <%byebug%>
+                        <% exit %>
+                  <%end%>
               <%end%>
-            <%else%>
+
+              <%if is_Already_subscribed %>
+                  <h3>Already Subscribed</h3>
+              <%elsif !is_Already_subscribed%>
+                  <a href=<%= subscribeThisCourseURL %>  data-method="POST">Subscribe</a>
+              <%end%>
+          <%else%>
               <button onclick="subSignInFunc()"> Subscribe</button>
           <%end%>
-          <%#------------------ Code for subscribe ends------------------------ %>
+            <%#------------------ Code for subscribe ends------------------------ %>
 
         </md-card>
-    <%end%>
-<% end %>
+

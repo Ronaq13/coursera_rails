@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   
+  get 'mentor/myCourse'
+
+  get 'mentor/profile'
+
+  get 'mentor/settings'
+
+  resources :mentors
   get 'student/profile'
 
   devise_for :teachers
@@ -9,7 +16,7 @@ Rails.application.routes.draw do
   get '/android' => 'home#index_android'   # where all android courses listed
   get '/web' => 'home#index_web'           # where all web courses listed
   get '/analytics' => 'home#index_analytics'     # where all analytics courses listed
-  get '/course_view_home/:key' => 'home#course_view_home'  # view the course when user is not sign in
+  get '/course_view_home/:id' => 'home#course_view_home'  # view the course when user is not sign in
 
   # ----------For subscribe --------------#
 
