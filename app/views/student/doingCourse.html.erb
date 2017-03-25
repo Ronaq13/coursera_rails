@@ -6,19 +6,56 @@
 <div style="display: flex;justify-content: center;align-items: center;">
 
   <md-card>
+    <h2>Playlist</h2>
+    <div class="desdiv" style="padding: 16px;"
+         onclick="var frame = document.getElementById('videoFrame');
+             frame.setAttribute('src', '<%= course.teaser_video %>');"><p>Intro</p></div>
+    <% numOfVideos = 0
+       numOfDone = 0 %>
     <%course.videos.each do |c|%>
-        <div class="desdiv" style="padding: 16px;"
+        <%numOfVideos += 1%>
+        <div style="display: flex;">
+            <div class="desdiv" style="padding: 16px;"
+                 onclick="var frame = document.getElementById('videoFrame');
+                frame.setAttribute('src', '<%= c.link %>');">
+              <p><%= c.desc %></p>
+            </div>
 
-             onclick="var frame = document.getElementById('videoFrame');
-            frame.setAttribute('src', '<%= c.link %>');"><p><%= c.desc %></p></div>
+            <div style="padding: 16px;">
+              <%
+                courseIsDone = false
+                DoneVideo.all.each do |dv|
+                  if dv.user_id == current_user.id
+                    if dv.link == c.link.split('/')[-1]
+                      courseIsDone = true
+                    end
+                  end
+                end
+
+                tmpLink = '/doneVideo/' + c.link.split('/')[-1] + '/' + course.id.to_s
 
 
+              %>
+              <%if courseIsDone%>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                  <% numOfDone +=1 %>
+              <%else%>
+                  <a href="<%= tmpLink%>">Done</a>
+              <%end%>
+            </div>
+        </div>
     <%end%>
   </md-card>
 
   <md-card>
+  <%if numOfVideos == numOfDone %>
+    <h1 style="margin-bottom: 10px;">Course Complete</h1>
+        <a style="margin-bottom: 30px;" href="/accomplishment/<%= current_user.id.to_s%>">See Certificate</a>
+  <%end%>
+
     <iframe id="videoFrame" src=<%= course.teaser_video %> width="420"  height=300">
     </iframe>
+
   </md-card>
 
 </div>

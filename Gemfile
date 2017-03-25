@@ -49,3 +49,4 @@ end
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'yt', '~> 0.28.0'

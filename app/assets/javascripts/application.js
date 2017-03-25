@@ -18,6 +18,10 @@
 
 
 
+
+
+
+$(document).ready(function(){
     function subSignInFunc(){
         alert("Please Sign in first!!");
     }
@@ -36,14 +40,7 @@
         }
     }
 
-
-
-//----------To make playlist in /doingCourses view
-
-    $('.desdiv').click(function() {
-        console.log(this);
-        console.log(this.data("myvalue"));
-    });
+});
 
 
 

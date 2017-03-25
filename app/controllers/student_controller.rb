@@ -36,7 +36,15 @@ class StudentController < ApplicationController
   end
 
 
+  def doneVideo
+    dv = DoneVideo.new
+    dv.user_id = current_user.id
+    dv.link = params[:link]
+    dv.save
 
+    return redirect_to '/doingCourse/'+params[:course_id]
+
+  end
 
 
 

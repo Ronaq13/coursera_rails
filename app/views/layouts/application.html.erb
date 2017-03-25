@@ -61,6 +61,7 @@
             <button class="dropbtn"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<%= value%></button>
             <div class="dropdown-content" style="left:0;">
               <a href="/myCourses">My Courses</a>
+              <a href="/accomplishment/<%= current_user.id.to_s %>">Accomplishment</a>
               <a href="/profile">Profile</a>
               <a href="/settings">Settings</a>
               <a href="/users/sign_out" data-method="DELETE">Log Out</a>
