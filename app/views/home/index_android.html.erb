@@ -3,7 +3,7 @@
 <% Course.all.each do |course| %>
     <% if course.category === "Android" %>
         <md-card>
-          <p><%= course.key%></p>
+
           <%url = "/course_view_home/" + course.id.to_s %>
           <h2><a href=<%= url%> ><%=  course.title %></a></h2>
 

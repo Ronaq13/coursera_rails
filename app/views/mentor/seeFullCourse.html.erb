@@ -1,0 +1,18 @@
+<%
+  course = Course.find(params[:course_id])
+%>
+
+<md-card>
+  <% imgSrc = course.banner_image.blank? ? course.image : course.banner_image %>
+
+  <h2><%=  course.title %></h2>
+  <h3><%= course.subtitle%></h3>
+  <img src=<%= imgSrc %> alt="photo" width="400px">
+  <p><%=  course.summary %></p>
+
+  <p> Level : <%=  course.level %></p>
+  <p><strong>Syllabus</strong></p>
+  <p><%=  course.syllabus %></p>
+  <p> Duration : <%=  course.expected_duration %> months</p>
+
+</md-card>

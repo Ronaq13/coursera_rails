@@ -6,7 +6,7 @@
 
           <h2><%=  course.title %></h2>
           <h3><%= course.subtitle%></h3>
-          <img src=<%= imgSrc %> alt="photo" width="100%">
+          <img src=<%= imgSrc %> alt="photo" width="400px">
           <p><%=  course.summary %></p>
 
           <p> Level : <%=  course.level %></p>
@@ -21,13 +21,12 @@
           <%#------------------ Code fo subscribe button ----------------------%>
           <%if user_signed_in?%>
               <% is_Already_subscribed = false %>
-              <% subscribeThisCourseURL = "/subscribeThisCourse/" + current_user.id.to_s + "/" + course.id.to_s + "/" + course.key %>
+              <% subscribeThisCourseURL = "/subscribeThisCourse/" + current_user.id.to_s + "/" + course.id.to_s %>
               <% current_user.courses.each do |cou|%>
 
                    <% if cou.id == params[:id] %>
-                          <%= is_Already_subscribed = true %>
+                          <% is_Already_subscribed = true %>
                       <%byebug%>
-                        <% exit %>
                   <%end%>
               <%end%>
 
@@ -36,6 +35,8 @@
               <%elsif !is_Already_subscribed%>
                   <a href=<%= subscribeThisCourseURL %>  data-method="POST">Subscribe</a>
               <%end%>
+          <%elsif teacher_signed_in?%>
+              <button onclick="subSignInFuncForTeacher()"> Subscribe</button>
           <%else%>
               <button onclick="subSignInFunc()"> Subscribe</button>
           <%end%>

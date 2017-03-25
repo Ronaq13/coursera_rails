@@ -16,13 +16,41 @@
 //= require_tree .
 
 
-function subSignInFunc(){
-    console.log("Hello");
-    alert("Please Sign in first!!");
-}
 
-function changeVideo(link){
-    alert("hello");
-    var frame = document.getElementById('videoFrame');
-    frame.src.innerHTML = link;
-}
+
+    function subSignInFunc(){
+        alert("Please Sign in first!!");
+    }
+
+    function subSignInFuncForTeacher() {
+        alert("Teachers can't subscribe any course!!");
+    }
+
+    function unsubscribeConfirmation(id) {
+        var retVal = confirm("Are you sure ?");
+        if( retVal == true ){
+            location.href="/unsubscribeCourse/" + id;
+        }
+        else{
+            location.href="/myCourses";
+        }
+    }
+
+
+
+//----------To make playlist in /doingCourses view
+
+    $('.desdiv').click(function() {
+        console.log(this);
+        console.log(this.data("myvalue"));
+    });
+
+
+
+
+
+
+
+
+
+

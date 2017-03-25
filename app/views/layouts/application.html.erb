@@ -36,11 +36,13 @@
             end
 
           %>
+
           <button class="dropbtn"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<%= value%></button>
           <div class="dropdown-content" style="left:0;">
-            <a href="/teacher_myCourses">My Courses</a>
-            <a href="/teacher_profile">Profile</a>
-            <a href="/teacher_settings">Settings</a>
+            <a href="/addNewCourse"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add new course</a>
+            <a href="/mentor_myCourse">My Courses</a>
+            <a href="/mentorProfile">Profile</a>
+            <a href="/mentorSettings">Settings</a>
             <a href="/teachers/sign_out" data-method="DELETE">Log Out</a>
           </div>
           </div>

@@ -29,6 +29,17 @@ class StudentController < ApplicationController
   def doingCourse
   end
 
+  def unsubscribeCourse
+    course = Subscribe.find_by_course_id(params[:id])
+    course.destroy
+    return redirect_to '/myCourses'
+  end
+
+
+
+
+
+
 
 
 end

@@ -5,7 +5,6 @@
 
 <% Course.all.each do |course| %>
         <md-card>
-          <p><%= course.key%></p>
           <p><%= course.id%></p>
           <%url = "/course_view_home/" + course.id.to_s %>
           <h2><a href=<%= url%> ><%=  course.title %></a></h2>

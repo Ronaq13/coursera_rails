@@ -1,0 +1,21 @@
+<%current_teacher.courses.each do |c|%>
+  <md-card>
+    <%
+        count = 0
+      Subscribe.all.each do |s|
+        if s.course_id == c.id
+          count +=1
+        end
+      end
+
+      seeFullCourseURL = "'" + '/seeFullCourse/' +  c.id.to_s + "'"
+    %>
+    <div style="display: flex; align-items: center;" onclick="location.href=<%= seeFullCourseURL %>;">
+      <img class="controllingWidthOfImage" src=<%= c.image%> alt="photo">
+      <div style="display: flex;flex-direction: column; align-items: center;" onclick="">
+        <p style="margin-left: 20px;"><%= c.short_summay%></p>
+        <p style="margin-left: 20px;">Number of students subscribed to this course : <strong><%= count %></strong></p>
+      </div>
+    </div>
+  </md-card>
+<%end%>

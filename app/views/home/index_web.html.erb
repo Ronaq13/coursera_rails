@@ -1,9 +1,9 @@
 <a href="/" data-method="GET">Back</a>
 
 <% Course.all.each do |course| %>
-    <% if course.category === "Web" %>
+    <% if course.category == "Web" %>
       <md-card>
-        <p><%= course.key%></p>
+
         <p><%= course.id%></p>
         <%url = "/course_view_home/" + course.id.to_s %>
         <h2><a href=<%= url%> ><%=  course.title %></a></h2>

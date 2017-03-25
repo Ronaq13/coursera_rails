@@ -1,0 +1,20 @@
+<md-card>
+  <%= form_tag '/nowAddingCourse' do%>
+      <h3>Category : <%= text_field_tag 'category',nil,placeholder: "Web, Android, others" %> </h3>
+
+      <h3>Title : <%= text_field_tag 'title' %></h3>
+      <h3>Subtitle : <%= text_field_tag 'subtitle' %></h3>
+      <h3>Level : <%= text_field_tag 'level',nil,placeholder: "Hard,easy,medium" %></h3>
+      <h3>Image : <%= text_field_tag 'image' %></h3>
+      <h3>Video Link : <%= text_field_tag 'teaser_video' %></h3>
+      <h3>Summary : <%= text_field_tag 'summary' %></h3>
+      <h3>Short_summary : <%= text_field_tag 'short_summary' %></h3>
+      <h3>Syllabus : <%= text_field_tag 'syllabus', nil, class: 'input-large' %></h3>
+      <h3>Expected Duration : <%= number_field_tag 'expected_duration' %> months</h3>
+
+      <%= submit_tag "Save" %>
+
+  <%end%>
+
+  <a href=""></a>
+</md-card>
