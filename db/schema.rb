@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325160613) do
+ActiveRecord::Schema.define(version: 20170326015246) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "category"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170325160613) do
     t.string   "link_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "course_id"
   end
 
   create_table "mentors", force: :cascade do |t|

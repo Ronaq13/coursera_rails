@@ -40,6 +40,7 @@ class StudentController < ApplicationController
     dv = DoneVideo.new
     dv.user_id = current_user.id
     dv.link_key = params[:link]
+    dv.course_id = params[:course_id]
     dv.save
 
     return redirect_to '/doingCourse/'+params[:course_id]
@@ -51,7 +52,7 @@ class StudentController < ApplicationController
   end
 
   def addingDoneCourse
-    if current_user.done_courses.where(course_id: params[:course_id])
+    if current_user.done_courses.find_by(course_id: params[:course_id], user_id: current_user.id)
       return redirect_to '/accomplishment'
     else
       dc = DoneCourse.new
