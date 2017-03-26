@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :subscribes
   has_many :courses , through: :subscribes
-
+  has_many :done_courses
 
 
 end

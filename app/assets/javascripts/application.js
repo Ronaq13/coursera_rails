@@ -21,7 +21,7 @@
 
 
 
-$(document).ready(function(){
+
     function subSignInFunc(){
         alert("Please Sign in first!!");
     }
@@ -40,7 +40,7 @@ $(document).ready(function(){
         }
     }
 
-});
+
 
 
 

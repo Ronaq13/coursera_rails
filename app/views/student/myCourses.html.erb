@@ -1,4 +1,6 @@
 <%= current_user.id %>
+<%courseDone = false%>
+
   <md-card>
     <h2>Subscribed Courses</h2>
 
@@ -26,12 +28,25 @@
            <div style="display: flex; align-items: center;">
 
              <img class="controllingWidthOfImage" src=<%= tmpCourse.image%> alt="photo" onclick="location.href=<%=doingCourseURL%>;">
-             <div style="display: flex;flex-direction: column;">
+               <div style="display: flex;flex-direction: column;">
 
-               <p style="margin-left: 20px;"><%= tmpCourse.short_summay%></p>
-               <button style="margin-left: 20px; width: 100px;" onclick="unsubscribeConfirmation(<%= tmpCourse.id %>);">Un-subscribe</button>
+                 <p style="margin-left: 20px;"><%= tmpCourse.short_summay%></p>
 
-             </div>
+
+                <%if courseIsDone(tmpCourse.id,current_user.id) %>
+                     <div style="display: flex; margin-left: 20px;margin-top: 20px;">
+                       <i class="fa fa-check" aria-hidden="true"></i>
+                       <p>You have completed this course</p>
+                     </div>
+
+                <%else%>
+                     <button style="margin-left: 20px; width: 100px;" onclick="unsubscribeConfirmation(<%= tmpCourse.id %>);">Un-subscribe</button>
+                <%end%>
+
+                 <md-progress-linear md-mode="determinate" value="50"></md-progress-linear>
+
+
+               </div>
              </div>
          </md-card>
       <%end%>

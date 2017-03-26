@@ -50,3 +50,5 @@ end
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'yt', '~> 0.28.0'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'

@@ -12,6 +12,7 @@
              frame.setAttribute('src', '<%= course.teaser_video %>');"><p>Intro</p></div>
     <% numOfVideos = 0
        numOfDone = 0 %>
+
     <%course.videos.each do |c|%>
         <%numOfVideos += 1%>
         <div style="display: flex;">
@@ -26,7 +27,7 @@
                 courseIsDone = false
                 DoneVideo.all.each do |dv|
                   if dv.user_id == current_user.id
-                    if dv.link == c.link.split('/')[-1]
+                    if dv.link_key == c.link.split('/')[-1]
                       courseIsDone = true
                     end
                   end
@@ -50,7 +51,7 @@
   <md-card>
   <%if numOfVideos == numOfDone %>
     <h1 style="margin-bottom: 10px;">Course Complete</h1>
-        <a style="margin-bottom: 30px;" href="/accomplishment/<%= current_user.id.to_s%>">See Certificate</a>
+        <a style="margin-bottom: 30px;" href="/addingDoneCourse/<%= params[:course_id].to_s %>">See Certificate</a>
   <%end%>
 
     <iframe id="videoFrame" src=<%= course.teaser_video %> width="420"  height=300">

@@ -1,0 +1,5 @@
+<%current_user.done_courses.each do |dc|%>
+    <% course = Course.find(dc.course_id) %>
+    <h1><%= course.title %></h1>
+    <img src=<%= course.image %> alt="photo" width="400px">
+<%end%>

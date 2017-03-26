@@ -31,7 +31,8 @@ Rails.application.routes.draw do
   get '/unsubscribeCourse/:id' => 'student#unsubscribeCourse'
   post '/changeSettings' => 'student#changeSettings'
   get '/doneVideo/:link/:course_id' => 'student#doneVideo'
-
+  get '/accomplishment' => 'student#accomplishment'
+  get '/addingDoneCourse/:course_id' => 'student#addingDoneCourse'
 
   #--------------Teacher------------------#
 
