@@ -4,19 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/views/home/course_view_home.html.erb" line="40" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1910584d-304c-43ed-952c-1358a2af9a10" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.byebug_history" afterPath="$PROJECT_DIR$/.byebug_history" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mentor_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/mentor_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/student_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/student_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/student_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/student_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index_analytics.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index_analytics.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mentor/seeFullCourse.html.erb" afterPath="$PROJECT_DIR$/app/views/mentor/seeFullCourse.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/doingCourse.html.erb" afterPath="$PROJECT_DIR$/app/views/student/doingCourse.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/myCourses.html.erb" afterPath="$PROJECT_DIR$/app/views/student/myCourses.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-    </list>
+    <list default="true" id="1910584d-304c-43ed-952c-1358a2af9a10" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -1069,7 +1057,7 @@
         <state relative-caret-position="810">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
