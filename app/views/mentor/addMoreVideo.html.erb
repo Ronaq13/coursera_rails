@@ -1,0 +1,10 @@
+<md-card>
+  <p>Your this course ID is : <%= params[:course_id]%></p>
+  <%= form_tag '/newVideoAdding' do%>
+
+      <h2>Video Link : <%= text_field_tag 'new_video' %></h2>
+      <h3>Description : <%= text_field_tag 'desc' %></h3>
+      <h3>Course ID : <%= number_field_tag 'c_id' %></h3>
+      <%= submit_tag "Add" %>
+  <%end%>
+</md-card>

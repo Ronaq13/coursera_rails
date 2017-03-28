@@ -45,4 +45,7 @@ Rails.application.routes.draw do
 
   post '/changeMentorSettings' => 'mentor#changeMentorSettings'
 
+  get '/addMoreVideo/:course_id' => 'mentor#addMoreVideo'
+  post '/newVideoAdding' => 'mentor#newVideoAdding'
+
 end

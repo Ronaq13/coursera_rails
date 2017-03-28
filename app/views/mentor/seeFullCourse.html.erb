@@ -15,4 +15,44 @@
   <p><%=  course.syllabus %></p>
   <p> Duration : <%=  course.expected_duration %> months</p>
 
+
+
+
+  <!---->
+
+
+  <div style="display: flex;justify-content: center;align-items: center;">
+
+    <md-card>
+      <h2>Playlist</h2>
+      <div class="desdiv" style="padding: 16px;"
+           onclick="var frame = document.getElementById('FrameVideo');
+               frame.setAttribute('src', '<%= course.teaser_video %>');"><p>Intro</p>
+      </div>
+
+
+      <%course.videos.each do |c|%>
+
+          <div style="display: flex;">
+            <div class="desdiv" style="padding: 16px;"
+                 onclick="var frame = document.getElementById('FrameVideo');
+                     frame.setAttribute('src', '<%= c.link %>');">
+              <p><%= c.desc %></p>
+            </div>
+          </div>
+      <%end%>
+    </md-card>
+
+    <md-card>
+
+      <iframe id="FrameVideo" src=<%= course.teaser_video %> width="420"  height=300">
+      </iframe>
+
+    </md-card>
+
+  </div>
+
+  <!---->
+  <% addMoreVideoURL ="/addMoreVideo/" + params[:course_id].to_s  %>
+  <a href=<%= addMoreVideoURL %> >Add more video</a>
 </md-card>

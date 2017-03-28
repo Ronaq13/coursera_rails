@@ -47,5 +47,21 @@ class MentorController < ApplicationController
     return redirect_to '/mentorProfile'
   end
 
+  def addMoreVideo
+  end
+
+  def newVideoAdding
+    newVideo = Video.new
+    newVideo.course_id = params[:c_id]
+    tmpURL = params[:new_video].sub('watch?v=','embed/')
+    newVideo.link = tmpURL
+    newVideo.desc = params[:desc]
+    newVideo.save
+    redirectURL = "/seeFullCourse/" + params[:c_id].to_s
+    return redirect_to redirectURL
+  end
+
+
+
 
 end

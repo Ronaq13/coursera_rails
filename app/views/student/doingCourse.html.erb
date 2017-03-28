@@ -52,7 +52,9 @@
   <md-card>
   <%if numOfVideos == numOfDone %>
     <h1 style="margin-bottom: 10px;">Course Complete</h1>
-        <a style="margin-bottom: 30px;" href="/addingDoneCourse/<%= params[:course_id] %>">See Certificate</a>
+        <% addingDoneCourse = "/addingDoneCourse/" +  params[:course_id].to_s  %>
+
+        <a style="margin-bottom: 30px;" href=<%= addingDoneCourse%> >See Certificate</a>
   <%end%>
 
     <iframe id="videoFrame" src=<%= course.teaser_video %> width="420"  height=300">

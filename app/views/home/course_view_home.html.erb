@@ -22,17 +22,16 @@
           <%if user_signed_in?%>
               <% is_Already_subscribed = false %>
               <% subscribeThisCourseURL = "/subscribeThisCourse/" + current_user.id.to_s + "/" + course.id.to_s %>
-              <% current_user.courses.each do |cou|%>
+              <% current_user.subscribes.each do |cou|%>
 
-                   <% if cou.id == params[:id] %>
+                   <% if cou.course_id.to_s == params[:id] %>
                           <% is_Already_subscribed = true %>
-                      <%byebug%>
                   <%end%>
               <%end%>
 
               <%if is_Already_subscribed %>
                   <h3>Already Subscribed</h3>
-              <%elsif !is_Already_subscribed%>
+              <%else%>
                   <a href=<%= subscribeThisCourseURL %>  data-method="POST">Subscribe</a>
               <%end%>
           <%elsif teacher_signed_in?%>
