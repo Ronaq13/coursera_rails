@@ -1,28 +1,41 @@
 <% current_user.id %>
 <%courseDone = false%>
-
-
   <md-card>
     <h2>Subscribed Courses</h2>
 
 
-    <% coursesIdArray = Array.new %>
+    <% current_user.done_courses.each do |cour| %>
+            <%
+              if !Course.exists?(cour.course_id) && DoneCourse.exists?(course_id: cour.course_id)
+
+                deletingCourse = DoneCourse.find_by_course_id(cour.course_id)
+                deletingCourse.destroy
+
+              end
+
+            %>
+    <%end%>
 
     <% current_user.subscribes.each do |cour| %>
-        <% if current_user.id == cour.user_id  %>
-            <%
-              coursesIdArray << cour.course_id
-            %>
+        <%
+          if !Course.exists?(cour.course_id) && Subscribe.exists?(course_id: cour.course_id)
 
-        <% end %>
+            deletingCourse = Subscribe.find_by_course_id(cour.course_id)
+            deletingCourse.destroy
+
+          end
+
+        %>
     <%end%>
 
 
-      <%coursesIdArray.reverse.each do |element|%>
+
+    <%current_user.subscribes.reverse.each do |cour|%>
+        <% element = cour.course_id%>
          <md-card>
            <%
              tmpCourse = Course.find(element)
-             doingCourseURL = "'" + '/doingCourse/' + tmpCourse.id.to_s + "'"
+               doingCourseURL = "'" + '/doingCourse/' + tmpCourse.id.to_s + "'"
 
            %>
 

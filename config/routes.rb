@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   post '/changeSettings' => 'student#changeSettings'
   post '/doneVideo/:link/:course_id' => 'student#doneVideo'
   get '/accomplishment' => 'student#accomplishment'
-  get '/addingDoneCourse/:course_id' => 'student#addingDoneCourse'
+
 
   #--------------Teacher------------------#
 
@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   get '/seeFullCourse/:course_id' => 'mentor#seeFullCourse'
 
   post '/changeMentorSettings' => 'mentor#changeMentorSettings'
-
+  get '/deleteCourse/:course_id' => 'mentor#deleteCourse'
   get '/addMoreVideo/:course_id' => 'mentor#addMoreVideo'
   post '/newVideoAdding' => 'mentor#newVideoAdding'
 

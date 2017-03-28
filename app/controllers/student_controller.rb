@@ -51,19 +51,7 @@ class StudentController < ApplicationController
 
   end
 
-  def addingDoneCourse
-    if current_user.done_courses.find_by(course_id: params[:course_id], user_id: current_user.id)
-      return redirect_to '/accomplishment'
-    else
-      byebug
-      dc = DoneCourse.new
-      dc.user_id = current_user.id
-      dc.course_id = params[:course_id]
-      dc.save
-      return redirect_to '/accomplishment'
-    end
 
-  end
 
 
 end

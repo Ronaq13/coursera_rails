@@ -40,6 +40,15 @@
         }
     }
 
+    function deleteCourseConfirmation(id){
+        var retVal = confirm("Are you sure ?");
+        if( retVal == true ){
+            location.href="/deleteCourse/" + id;
+        }
+        else{
+            location.href="/seeFullCourse/" + id;
+        }
+    }
 
 
 

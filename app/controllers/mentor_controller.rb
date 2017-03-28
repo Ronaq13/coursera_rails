@@ -61,7 +61,11 @@ class MentorController < ApplicationController
     return redirect_to redirectURL
   end
 
-
+  def deleteCourse
+    c = Course.find(params[:course_id])
+    c.destroy
+    return redirect_to '/mentor_myCourse'
+  end
 
 
 end

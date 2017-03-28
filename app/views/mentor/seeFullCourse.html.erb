@@ -55,4 +55,13 @@
   <!---->
   <% addMoreVideoURL ="/addMoreVideo/" + params[:course_id].to_s  %>
   <a href=<%= addMoreVideoURL %> >Add more video</a>
+
+  <h2>Delete this course</h2>
+  <button style="width: 100px;" onclick="deleteCourseConfirmation(<%= params[:course_id] %>);">Delete</button>
+
+
+
+
+
+
 </md-card>
