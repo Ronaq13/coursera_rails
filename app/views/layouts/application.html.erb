@@ -58,8 +58,16 @@
                 end
 
             %>
-            <button class="dropbtn"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<%= value%></button>
-            <div class="dropdown-content" style="left:0;">
+            <% if current_user.photo %>
+
+                <div>
+                  <img src="/uploads/users/<%= current_user.photo %>" style="width: 40px; height: 40px; border-radius: 50%">
+                  &nbsp;<%= value %>
+                </div>
+            <%else%>
+                <button class="dropbtn"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<%= value %></button>
+            <%end%>
+                <div class="dropdown-content" style="left:0;">
               <a href="/myCourses">My Courses</a>
               <a href="/accomplishment">Accomplishment</a>
               <a href="/profile">Profile</a>

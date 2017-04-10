@@ -17,12 +17,22 @@ class StudentController < ApplicationController
     changedAge = params[:age]
     changedGender = params[:gender]
 
+
+    profilePhoto = params[:profile_photo]
+    profile_photo_name = current_user.id.to_s + "." + profilePhoto.original_filename.split(".")[1]
+
+
+    File.open(Rails.root.join('public', 'uploads','users', profile_photo_name), 'wb') do |file|
+      file.write(profilePhoto.read)
+    end
+
     user = User.find(current_user.id)
     user.update_attribute(:email, changedEmail)
     user.update_attribute(:username, changedUserName)
     user.update_attribute(:short_bio,changedShortBio)
     user.update_attribute(:age,changedAge)
     user.update_attribute(:gender, changedGender)
+    user.update_attribute(:photo, profile_photo_name)
     return redirect_to '/profile'
   end
 
